@@ -53,15 +53,6 @@ class FormatterEnhanced(sublime_plugin.EventListener):
             except Exception as error:
                 error_output = process.stderr.read().decode('utf-8')
 
-                print(
-                    u'FormatterEnhanced.py:45 Failed to execute ' +
-                        'command "{0}" ({1}): {2}'.format(
-                            formatter['command'],
-                            error,
-                            error_output,
-                        ),
-                )
-
                 if error_output != None and error_output != '':
                     show_output(error_output)
 
